@@ -61,7 +61,11 @@ export class LoginComponent implements OnInit {
       this.httpclient.post(this.baseUrl + 'login', this.myForm.value).subscribe((val: any) => {
         console.log(val);
         if (val.succ == true) {
-          this.router.navigate(['/admin', this.msg]);
+          if (val.identity == '管理员') {
+            this.router.navigate(['/admin', this.msg]);
+          } else {
+            this.router.navigate(['/common', this.msg]);
+          }
         } else if (val.succ == false) {
           alert('用户名或密码错误！');
         }

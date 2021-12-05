@@ -1,1 +1,37 @@
-<p>common works!</p>
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand"><img src="assets/img/login.svg" width="30" height="30"
+            style="margin-right: 0.8rem;">教室设备管理系统</a>
+    <form class="form-inline">
+        <!-- <button type="button" class="btn btn-outline-light">你好，{{name}}</button> -->
+        <button type="button" class="btn btn-dark">你好！{{name}}</button>
+        <!-- <input class="form-control mr-sm-2" type="search" value="你好，\'{{name}}\'"> -->
+        <button class="btn btn-dark my-2 my-sm-0" type="submit" [routerLink]="['/login']">切换账户</button>
+    </form>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" style="height: 100rem;">
+            <div class="sidebar-sticky pt-3">
+                <span>Menu</span>
+
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['check']">
+                            <img src="/assets/img/activity.svg" style="width: 25px; margin-right: 5px;">
+                            <button type="button" class="btn btn-secondary">设备查看</button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['alter']">
+                            <img src="/assets/img/group.svg" style="width: 25px; margin-right: 5px;">
+                            <button type="button" class="btn btn-secondary ">修改密码</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <router-outlet></router-outlet>
+        </main>
+    </div>
+</div>

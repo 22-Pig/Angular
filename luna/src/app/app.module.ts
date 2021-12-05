@@ -10,9 +10,14 @@ import { CommonComponent } from './components/common/common.component';
 import { DeviceComponent } from './components/admin/device/device.component';
 import { UserComponent } from './components/admin/user/user.component';
 import { InfoComponent } from './components/admin/info/info.component';
+import { CheckComponent } from './components/common/check/check.component';
+import { AlterComponent } from './components/common/alter/alter.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @NgModule({
   declarations: [
@@ -23,6 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     DeviceComponent,
     UserComponent,
     InfoComponent,
+    CheckComponent,
+    AlterComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ModalModule.forRoot(),
+    BsDropdownModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

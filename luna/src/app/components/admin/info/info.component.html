@@ -1,1 +1,28 @@
-<p>info works!</p>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">设备信息</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <!-- <audio src="/assets/Jannik - 浮光 (The History).mp3" controls="controls" loop="loop" autoplay="autoplay"
+            preload="auto" style="margin-left: 15rem;"> </audio> -->
+    </div>
+</div>
+
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light"
+    style="background-color: rgb(225, 230, 215);">
+    <div class="row">
+        <div *ngFor='let info of allInfos;'>
+            <div class="card text-center"
+                *ngIf="info.type!='Temp' && info.type!='Humd' && info.type!='Smoke' && info.type!='NH3' && info.type!='H2S'">
+                <div class="card-header">设备名：{{info.name}}</div>
+                <p class="card-title text-muted">实时状态：{{info.value==1? "开":"关"}}</p>
+                <img src="{{deviceIcon((info.type),(info.value))}}">
+                <div class="card-body">
+                    <p class="card-text"><small class="text-muted">位置：{{info.build}}{{info.floor}}</small></p>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-success" (click)="turnOn(info)">打开</button>
+                        <button type="button" class="btn btn-secondary" (click)="turnOff(info)">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

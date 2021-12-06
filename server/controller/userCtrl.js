@@ -75,6 +75,27 @@ module.exports = {
                 }
             }
         });
-    }
+    },
+    alterUser(req, resp) {
+        let username = req.body.userName;
+        let password = req.body.password;
+        let alterArr = [password, username];
+        console.log('username' + username);
+        console.log('password' + password);
+        userDao.alterUserDB(alterArr, function (err, data) {
+            if (err) {
+                // console.log(err);
+                return;
+            } else {
+                if (data) {
+                    // console.log(data);
+                    resp.send({ succ: true, message: alterArr });
+                }
+                else {
+                    resp.send({ succ: false });
+                }
+            }
+        });
+    },
 
 }

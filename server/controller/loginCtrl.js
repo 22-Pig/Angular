@@ -15,9 +15,9 @@ module.exports = {
             else {
                 console.log("loginCtrl:" + data.length);
                 data = JSON.stringify(data);
-                console.log(data);
+                // console.log(data);
                 data = JSON.parse(data);
-                console.log(data);
+                // console.log(data);
                 if (data.length == 1) {
                     resp.send({ succ: true, identity: data[0].message });
                 } else {

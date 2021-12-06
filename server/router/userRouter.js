@@ -18,4 +18,6 @@ router.get("/searchUser/:username",userCtrl.searchUser);
 // 查询所有
 router.get("/searchAllUser",userCtrl.searchAllUser);
 
+router.post("/alterUser",userCtrl.alterUser);
+
 module.exports = router;

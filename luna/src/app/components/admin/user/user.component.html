@@ -42,9 +42,9 @@
     </div>
     <div class="text-center">
         <div class="col-auto my-1">
-            <button class="btn btn-success" (click)="openModal(template_add)">新增</button>
+            <button class="btn btn-success" (click)="clear();openModal(template_add)">新增</button>
             <!-- <button class="btn btn-warning" (click)="openModal(template_update)">修改</button> -->
-            <button class="btn btn-primary" (click)="openModal(template_search)">查询</button>
+            <button class="btn btn-primary" (click)="clear();openModal(template_search)">查询</button>
         </div>
     </div>
 </div>

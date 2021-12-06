@@ -57,13 +57,6 @@ export class UserComponent implements OnInit {
   }
 
   openModal(template: TemplateRef<any>) {
-    /* let username = String(this.currentUser.username);
-    if (username == 'admin') {
-      alert('管理员账户不可被修改或删除!');
-      // this.currentUser = ;
-      // console.log(this.currentUser);
-    } else {
-    } */
     this.modalRef = this.modalService.show(template);
   }
 
@@ -107,6 +100,15 @@ export class UserComponent implements OnInit {
     this.currentUser = u;
     console.log(this.currentUser);
     this.userForm.setValue(this.currentUser);
+  }
+
+  clear() {
+    /* this.userForm = this.fb.group({
+      'id': [''],
+      'username': [''],
+      'password': [''],
+      'message': ['']
+    }) */
   }
 
   delete() {

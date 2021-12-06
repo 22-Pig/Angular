@@ -32,4 +32,13 @@ module.exports = {
             cb(err, data);
         });
     },
+    alterUserDB(arr, cb) {
+        console.log(arr);
+        const sql = "UPDATE user SET password = ? WHERE username = ?";
+        dbPool.connect(sql, arr, function (err, data) {
+            // console.log(err);
+            // console.log(data);
+            cb(err, data);
+        });
+    },
 }

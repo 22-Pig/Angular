@@ -20,6 +20,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { RecordComponent } from './components/admin/record/record.component';
 
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +45,7 @@ import { RecordComponent } from './components/admin/record/record.component';
     ModalModule.forRoot(),
     BsDropdownModule.forRoot(),
   ],
-  providers: [],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

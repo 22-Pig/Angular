@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { RecordComponent } from './components/admin/record/record.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     InfoComponent,
     CheckComponent,
     AlterComponent,
+    RecordComponent,
   ],
   imports: [
     BrowserModule,

@@ -15,7 +15,6 @@
                         <th scope="col">用户名</th>
                         <th scope="col">密码</th>
                         <th scope="col">备注</th>
-                        <!-- <th scope="col">选中状态</th> -->
                         <th scope="col">操作</th>
                     </tr>
                 </thead>
@@ -25,8 +24,6 @@
                         <td>{{user.username}}</td>
                         <td>{{user.password}}</td>
                         <td>{{user.message}}</td>
-                        <!-- <td><input type="radio" class="form-check-input" id="exampleCheck1" name="option1"
-                                (click)="select(user)"><label>选中</label></td> -->
                         <td>
                             <input type="button" class="btn btn-outline-warning" value="修改"
                                 (click)="select(user);openModal(template_update)"
@@ -43,7 +40,6 @@
     <div class="text-center">
         <div class="col-auto my-1">
             <button class="btn btn-success" (click)="clear();openModal(template_add)">新增</button>
-            <!-- <button class="btn btn-warning" (click)="openModal(template_update)">修改</button> -->
             <button class="btn btn-primary" (click)="clear();openModal(template_search)">查询</button>
         </div>
     </div>

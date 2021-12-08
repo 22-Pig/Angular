@@ -1,0 +1,30 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2 text-info">登录统计</h1>
+</div>
+
+<div class="my-3 p-3 bg-white rounded shadow-sm div">
+    <div class="text-center">
+        <h4>数据表映射<span class="badge badge-secondary">New</span></h4>
+    </div>
+    <div>
+        <div>
+            <table id="recordTable" class="table table-striped text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">序号</th>
+                        <th scope="col">登录账户</th>
+                        <th scope="col">上次登录时间</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let record of records$ | async;let i = index'>
+                        <th scope="row">{{ i+1 }}</th>
+                        <td>{{record.username}}</td>
+                        <td>{{record.time}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

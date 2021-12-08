@@ -8,11 +8,8 @@ const login = require("./router/loginRouter");
 const device = require("./router/deviceRouter");
 const user = require("./router/userRouter");
 const info = require("./router/infoRouter");
-// const hardware = require("./router/hardwareRouter");
+const record = require("./router/recordRouter");
 
-// const aliyun = require("./service/aliyun");
-
-// aliyun.getAliptConection();
 
 const app = express();
 
@@ -41,7 +38,7 @@ app.use(login);
 app.use(device);
 app.use(user);
 app.use(info);
-// app.use(hardware);
+app.use(record);
 
 // 配置静态资源
 app.use(express.static(__dirname + "/static"));

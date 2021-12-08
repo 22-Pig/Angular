@@ -7,6 +7,9 @@ module.exports = {
         let password = req.body.password;
 
         let loginArr = [username, password];
+
+        var recordArr = [username, new Date(Date.now())];
+        // var recordArr = [new Date(Date.now()), username];
         console.log(loginArr);
         loginDao.loginDB(loginArr, function (err, data) {
             if (err) {
@@ -19,6 +22,7 @@ module.exports = {
                 data = JSON.parse(data);
                 // console.log(data);
                 if (data.length == 1) {
+                    loginRecord(recordArr);
                     resp.send({ succ: true, identity: data[0].message });
                 } else {
                     resp.send({ succ: false });
@@ -26,4 +30,18 @@ module.exports = {
             }
         });
     }
+}
+
+function loginRecord(recordArr) {
+    console.log(recordArr);
+    loginDao.operateDB(recordArr, function (err, data) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            if (data) {
+                console.log('operateDB' + data);
+            }
+        }
+    });
 }

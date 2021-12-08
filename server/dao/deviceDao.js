@@ -10,7 +10,6 @@ module.exports = {
                 console.log(data);
                 arr[0] = data[0].id;
                 const sql = "INSERT INTO info SET id = ?, type = ?, name = ?,value = ?, descr = ?";
-                console.log(arr);
                 dbPool.connect(sql, arr, function (err, data) {
                     cb(err, data);
                 });
